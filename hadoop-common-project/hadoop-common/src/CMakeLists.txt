@@ -142,7 +142,10 @@ if (ISAL_LIBRARY)
         ${SRC}/io/erasurecode/jni_rs_encoder.c
         ${SRC}/io/erasurecode/jni_rs_decoder.c
         ${SRC}/io/erasurecode/jni_xor_encoder.c
-        ${SRC}/io/erasurecode/jni_xor_decoder.c)
+        ${SRC}/io/erasurecode/jni_xor_decoder.c
+        ${SRC}/io/compress/isal/IsalCompressor.c
+        ${SRC}/io/compress/isal/IsalDecompressor.c
+)
 
         add_executable(erasure_code_test
         ${SRC}/io/erasurecode/isal_load.c
@@ -151,6 +154,8 @@ if (ISAL_LIBRARY)
         ${SRC}/io/erasurecode/dump.c
         ${SRC}/io/erasurecode/erasure_coder.c
         ${TST}/io/erasurecode/erasure_code_test.c
+        ${SRC}/io/compress/isal/IsalCompressor.c
+        ${SRC}/io/compress/isal/IsalDecompressor.c
         )
         target_link_libraries(erasure_code_test ${CMAKE_DL_LIBS})
 else (ISAL_LIBRARY)
